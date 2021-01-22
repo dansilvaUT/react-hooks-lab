@@ -9,14 +9,13 @@ const PokemonList = (props) => {
         axios.get('https://pokeapi.co/api/v2/pokemon').then((res) => {
             setList(res.data.results)
         })
-    }, [])
-    console.log(props)
+    }, []);
 
     return (
         <div>
             {list.map((pokemon) => {
                 return (
-                    <Link key={pokemon.url} to={`/pokemon/${pokemon.name}`}>
+                    <Link key={pokemon.url} to={`/poke/${pokemon.name}`}>
                         <h2>{pokemon.name}</h2>
                     </Link>
                 )
